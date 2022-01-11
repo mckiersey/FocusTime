@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="focustime.css">
+    <script src="focustime.js" async defer></script>
+
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row  ">
+            <div class="col-12 d-flex justify-content-center " id="">
+
+                <h1 class="GeneralText">Welcome to FocusTime</h1>
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-12 d-flex justify-content-center " id="">
+                <h2 id="TimeNow"></h2>
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-8 d-flex justify-content-left " id="">
+                <label class="GeneralText" for="EndOfDay">What time will you stop working at today?</label>
+            </div>
+            <div class="col-4 d-flex justify-content-left " id="">
+
+                <input type="time" id="EndOfDay" name="EndOfDay" required>
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-8 d-flex justify-content-left " id="">
+                <label class="GeneralText" for="LunchBreak">How long will your lunch break be?</label>
+            </div>
+            <div class="col-4 d-flex justify-content-left " id="">
+                <input type="time" id="LunchBreak" name="LunchBreak" value="01:00">
+            </div>
+        </div>
+        comment
+
+        <div class="row  ">
+            <div class="col-8 d-flex justify-content-left " id="">
+                <label class="GeneralText" for="FocusSession">How long will your Focus Session be?</label>
+            </div>
+            <div class="col-4 d-flex justify-content-left " id="">
+                <input type="time" id="FocusSession" name="FocusSession" value="01:30">
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-8 d-flex justify-content-left " id="">
+                <label class="GeneralText" for="EmailTime">How long will you check emails for?</label>
+            </div>
+            <div class="col-4 d-flex justify-content-left " id="">
+                <input type="time" id="EmailTime" name="EmailTime" value="00:15">
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-12 d-flex justify-content-center " id="GoButton">
+                <button type="button" class="btn btn-light">Let's Go!</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

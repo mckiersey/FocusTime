@@ -1,0 +1,18 @@
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+h1,
+h2,
+h3,
+p,
+.GeneralText {
+    color: grey;
+    font-family: helvetica;
+}
