@@ -7,6 +7,9 @@ const Interval = luxon.Interval;
 
 $(document).ready(function () {
    
+    let src = 'https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3';
+let audio = new Audio(src);
+audio.play();
 
     console.log("JS loading")
     var dt = DateTime.now();
@@ -22,7 +25,8 @@ $(document).ready(function () {
 
     
     $(document).on("click", "#GoButton", function () {
-      
+    
+
         
     TimeEndofDay = $("#EndOfDay").val() 
     TimeLunch = $("#LunchBreak").val() 
@@ -48,6 +52,7 @@ $(document).ready(function () {
 
     today = todaysdate + "T"
     FullEndfDay = today + TimeEndofDay
+    console.log('full end of day = ', FullEndfDay)
     var testdate = DateTime.fromISO(FullEndfDay);
 
     const testdate_humanReadable = testdate.toLocaleString(DateTime.DATETIME_MED);
@@ -98,23 +103,36 @@ $(document).ready(function () {
     const hour = minute * 60
     totalFocusSeconds = totalFocusMintues * 60
 
-        while (totalFocusSeconds > 0) {
-        const focusCountDown = () => {
+    var focusTimeEnd = DateTime.now().plus({ minutes: totalFocusMintues }).toFormat("hh:mm");
 
-        totalFocusSeconds = totalFocusSeconds - second
-        totalFocusSecondsRemaining = totalFocusSeconds
-        totalFocusMinutesRemaining = totalFocusSecondsRemaining / minute
+    console.log('time end', focusTimeEnd)
 
-        totalFocusHoursRemaining = Math.floor(totalFocusSecondsRemaining % minute)
-        //totalFocusMinutesRemaining = Math.floor(totalFocusMinutesRemaining % hour)
+    var timeStartOfSession = DateTime.now()
+   
+    const timeEndOfSession = timeStartOfSession.plus({ minutes: totalFocusMintues});
 
-        console.log(totalFocusSecondsRemaining)
-        //console.log('hours remaining: ', totalFocusHoursRemaining, '| minutes remaining: ', totalFocusMinutesRemaining, '| seconds remaining: ', totalFocusSecondsRemaining)
-        }
-        setInterval(focusCountDown,1000)
-//https://www.youtube.com/watch?v=Rib69h2DOxg
+    timeDiffSeconds = 90
+    while (timeDiffSeconds > 0) {
+    const focusCountDown = () => {
+    var timeNow = DateTime.now()
+
+    const timeDiff = timeEndOfSession.diff(timeNow, [ 'hours', 'minutes', 'seconds']);
+
+    countdownHours = timeDiff.hours
+    countdownMinutes= timeDiff.minutes
+    countdownSeconds = Math.round(timeDiff.seconds)
+
+    document.querySelector(".hour").innerText = countdownHours
+    document.querySelector(".minute").innerText = countdownMinutes
+    document.querySelector(".second").innerText = countdownSeconds
+    timeDiffSeconds - second
+    alert
     }
+    setInterval(focusCountDown,1000)
 
+        //https://www.youtube.com/watch?v=Rib69h2DOxg
+    }
+/*
 
     const countDown = () => {
         console.log('the final countdown')
@@ -136,7 +154,7 @@ $(document).ready(function () {
     //setInterval(countDown, 1000)
 
 // how to implement a timer: https://www.youtube.com/watch?v=x7WJEmxNlEs
-
+*/
 });
 
 

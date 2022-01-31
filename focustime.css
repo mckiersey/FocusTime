@@ -16,3 +16,15 @@ p,
     color: grey;
     font-family: helvetica;
 }
+
+.countdown{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 20;
+}
+
+.hour,.minute,.second{
+    font-size: 3rem;
+}
